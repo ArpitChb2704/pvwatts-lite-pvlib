@@ -2,6 +2,11 @@ from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from typing import List
 from solar_engine import run_simulation
+# NEW 
+from forecast import generate_7day_forecast
+from datetime import datetime
+
+
 
 app = FastAPI()
 
@@ -33,4 +38,31 @@ def predict(data: SolarInput):
         losses=data.losses,
         shading_factor=data.shading_factor
     )
+    # NEW: Add 7-day forecast
+    # 🔹 Month mapping
+    month_map = {
+        1: "Jan", 2: "Feb", 3: "Mar", 4: "Apr",
+        5: "May", 6: "Jun", 7: "Jul", 8: "Aug",
+        9: "Sep", 10: "Oct", 11: "Nov", 12: "Dec"
+    }
+
+    current_month = datetime.now().month
+    month_name = month_map[current_month]
+
+    monthly_energy = result["monthly_energy_kwh"][month_name]
+
+    # ⚠️ Handle zero case (important)
+    if monthly_energy == 0:
+        forecast = []
+    else:
+        forecast = generate_7day_forecast(
+            data.lat,
+            data.lon,
+            monthly_energy
+        )
+
+    result["forecast_7_days"] = forecast
+
+    # NEW END
     return result
+
