@@ -9,7 +9,13 @@ from datetime import datetime
 
 
 app = FastAPI()
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # allow all for now
+    allow_credentials=True,
+    allow_methods=["*"],  # VERY IMPORTANT
+    allow_headers=["*"],
+)
 
 class SolarInput(BaseModel):
     lat: float = Field(..., ge=-90, le=90, description="Latitude (-90 to 90)")
