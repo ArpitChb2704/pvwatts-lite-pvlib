@@ -5,6 +5,7 @@ from solar_engine import run_simulation
 # NEW 
 from forecast import generate_7day_forecast
 from datetime import datetime
+from fastapi.middleware.cors import CORSMiddleware
 
 
 
