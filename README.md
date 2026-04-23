@@ -1,19 +1,41 @@
-# 🌞 PVWatts Lite (pvlib-based)
+# 🌞 Solar Mitra
 
-A lightweight **solar power prediction tool** inspired by NREL’s PVWatts, built using **pvlib** and real-world solar datasets (NASA POWER).
+A full-stack solar analytics platform that predicts **annual energy production, monthly generation, and 7-day forecasts** using multiple models including **custom PVLib engine, PVGIS, and PVWatts**.
+
+In Addition **solar power prediction tool** inspired by NREL’s PVWatts, built using **pvlib** and real-world solar datasets (NASA POWER).
 
 This project estimates **solar energy generation (kWh)** for any location using physics-based modeling.
+
+
+## 🌐 Live Demo
+🔗 https://solarmitra.streamlit.app
 
 ---
 
 ## 🚀 Features
 
-- 📍 Location-based solar power prediction  
-- ☀️ Uses real irradiance & temperature data  
-- 🔬 Physics-based modeling with pvlib  
-- 📊 Monthly & annual energy output  
-- ⚡ DC to AC conversion with system losses  
-- 🧮 Simple alternative to PVWatts  
+- 📍 Location-based solar prediction (map + lat/lon auto-detection)
+- ⚡ Multi-model comparison:
+  - Custom PVLib-based model
+  - PVGIS
+  - PVWatts
+- 📊 Annual + Monthly energy production
+- 📈 7-day solar forecast (weather-aware)
+- 🌞 Irradiance analysis (PVGIS)
+- 💰 Savings calculator (ROI, payback, CO₂ impact)
+- 📄 Downloadable **premium PDF report**
+- 🗺️ Interactive dashboard (Streamlit)
+
+---
+
+## 🧠 Tech Stack
+
+- **Frontend:** Streamlit  
+- **Backend:** FastAPI  
+- **Solar Modeling:** PVLib  
+- **Data Sources:** NASA / PVGIS  
+- **Visualization:** Plotly  
+- **PDF Reports:** ReportLab  
 
 ---
 
@@ -29,6 +51,29 @@ The model follows standard solar PV simulation steps:
 6. **Final AC Energy Output (kWh)**
 
 ---
+
+## ⚙️ API Endpoints
+
+### `/predict`
+- Custom solar model prediction  
+- Returns:
+  - Annual energy
+  - Monthly production
+  - Performance ratio
+  - 7-day forecast  
+
+### `/predict1`
+- PVGIS-based simulation  
+- Includes irradiance data  
+
+### `/predict2`
+- PVWatts-based simulation  
+
+### `/savings`
+- ROI and financial analysis  
+
+---
+
 
 ## 📂 Project Structure
 
@@ -70,6 +115,7 @@ python main.py
 
 ## 🧾 Inputs
 
+- Location
 - Latitude & Longitude
 - Panel tilt & azimuth
 - System size (kW)
@@ -81,14 +127,19 @@ python main.py
 - Monthly energy generation (kWh)
 - Annual energy output
 - Performance insights
+- 7 day forcast
+- Model Comaprison
+- Irradiance Graph
+- Savings Insight
 
-## 🛠 Tech Stack
 
-- Python
-- pvlib
-- pandas
-- numpy
-- NASA POWER API
+## 🔥 Unique Selling Points
+
+- Combines 3 solar models in one dashboard
+- Includes weather-based forecasting
+- Provides financial insights + sustainability metrics
+- Generates client-ready PDF reports
+
 
 ## 📜 License
 
