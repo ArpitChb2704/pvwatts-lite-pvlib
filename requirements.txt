@@ -4,3 +4,6 @@ pvlib
 pandas
 requests
 dotenv
+plotly
+geopy
+reportlab
