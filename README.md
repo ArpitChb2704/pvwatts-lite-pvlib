@@ -144,3 +144,13 @@ python main.py
 ## 📜 License
 
 - MIT License
+
+  <img width="1457" height="827" alt="image" src="https://github.com/user-attachments/assets/cfa29ab7-13aa-45eb-ac75-15c6914c5553" />
+<img width="1462" height="676" alt="Screenshot 2026-04-23 at 12 26 23 PM" src="https://github.com/user-attachments/assets/fab7686d-ee32-47dd-a332-9f9b5db8eb56" />
+<img width="1470" height="682" alt="Screenshot 2026-04-23 at 12 26 39 PM" src="https://github.com/user-attachments/assets/b19cbdbf-7e24-401f-a434-8cbb3d83bf71" />
+<img width="1436" height="506" alt="Screenshot 2026-04-23 at 12 26 52 PM" src="https://github.com/user-attachments/assets/d1e7e26d-11b1-430a-9a78-313845557489" />
+<img width="1425" height="437" alt="Screenshot 2026-04-23 at 12 27 08 PM" src="https://github.com/user-attachments/assets/207c7865-dd5e-457d-859a-bff9f4ed083e" />
+<img width="593" height="829" alt="Screenshot 2026-04-23 at 12 29 01 PM" src="https://github.com/user-attachments/assets/ab1850cd-f7cf-4b45-908b-388936cfdce5" />
+
+
+
