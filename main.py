@@ -9,6 +9,8 @@ from fastapi import HTTPException
 import requests
 from dotenv import load_dotenv
 import os
+from solar_prediction import predict_daily_generation
+from inverter_simulation import simulate_inverter_generation
 
 load_dotenv()
 
@@ -159,6 +161,45 @@ def predict_pvgis(data: SolarInput):
 @app.post("/predict2")
 def predict_pvwatts(data: SolarInput):
     return call_pvwatts(data)
+
+
+@app.get("/predict-today")
+
+def predict_today(
+    lat: float,
+    lon: float,
+    capacity_kw: float,
+    tilt: float,
+    azimuth: float
+):
+
+    result = predict_daily_generation(
+        lat=lat,
+        lon=lon,
+        capacity_kw=capacity_kw,
+        tilt=tilt,
+        azimuth=azimuth
+    )
+
+    return result
+
+@app.get("/simulate")
+
+def simulate(
+    lat: float,
+    lon: float,
+    capacity_kw: float,
+    tilt: float,
+    azimuth: float
+):
+
+    return simulate_inverter_generation(
+        lat=lat,
+        lon=lon,
+        capacity_kw=capacity_kw,
+        tilt=tilt,
+        azimuth=azimuth
+    )
 
 
 @app.post("/savings")
